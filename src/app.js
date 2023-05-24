@@ -1,6 +1,6 @@
 // const express = require(express); codigo antiguo, pero en uso, para importar modulos
 
-import express from 'express'; //codigo nuevo para importar modulos: para que funcione hay que agregar
+import express from 'express'; //nueva forma de importar modulos: para que funcione hay que agregar
 //en el package.json la linea -"type": "module",-
 import rutaEmpleados from './routes/empleados.routes.js' //este comando importa las rutas que generemos
 //para conectar los registros de los empleados con la base de datos
@@ -14,7 +14,8 @@ const app = express(); //linea para ejecutar el modulo express
 app.use(express.json()); //funcion interna de express para trabajar con los datos json que envia el usuario
 
 app.use(rutaIndex); //esta funcion usa la ruta para la conexion con la base de datos
-app.use('/api', rutaEmpleados); //esta funcion usa las rutas impoortadas desde el archivo empleados.routes.js
+
+app.use('/api', rutaEmpleados); //esta funcion usa las rutas importadas desde el archivo empleados.routes.js
 //para ejecutar esto en el navegador: localhost:3000/api/rutaEmpleados
 
 app.use((req, res, next) => {
