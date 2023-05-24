@@ -16,7 +16,7 @@ app.use(express.json()); //funcion interna de express para trabajar con los dato
 app.use(rutaIndex); //esta funcion usa la ruta para la conexion con la base de datos
 
 app.use('/api', rutaEmpleados); //esta funcion usa las rutas importadas desde el archivo empleados.routes.js
-//para ejecutar esto en el navegador: localhost:3000/api/rutaEmpleados
+//para ejecutar esto en el navegador: localhost:3000/api/empleados
 
 app.use((req, res, next) => {
     res.status(404).json({message: 'not found'});
